@@ -14,10 +14,24 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 
+// Add CORS policy to allow frontend origin
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3001") // Allow frontend origin
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
+    });
+});
+
+
+
+
 // Add database context
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add repositories and services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -48,6 +62,8 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false
     };
 });
+
+
 
 // Configure Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -82,9 +98,16 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+
+// Apply the CORS policy before other middleware
+app.UseCors("AllowFrontend");
+app.UseAuthentication();
+app.UseAuthorization();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {

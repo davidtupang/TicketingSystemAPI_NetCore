@@ -117,3 +117,11 @@ D:\EBCO2\TicketingSystem\obj\Debug\net8.0\refint\TicketingSystem.dll
 D:\EBCO2\TicketingSystem\obj\Debug\net8.0\TicketingSystem.pdb
 D:\EBCO2\TicketingSystem\obj\Debug\net8.0\TicketingSystem.genruntimeconfig.cache
 D:\EBCO2\TicketingSystem\obj\Debug\net8.0\ref\TicketingSystem.dll
+G:\REPO WORK\TicketingSystemAPI_NetCore\obj\Debug\net8.0\TicketingSystem.csproj.AssemblyReference.cache
+G:\REPO WORK\TicketingSystemAPI_NetCore\obj\Debug\net8.0\TicketingSystem.GeneratedMSBuildEditorConfig.editorconfig
+G:\REPO WORK\TicketingSystemAPI_NetCore\obj\Debug\net8.0\TicketingSystem.AssemblyInfoInputs.cache
+G:\REPO WORK\TicketingSystemAPI_NetCore\obj\Debug\net8.0\TicketingSystem.AssemblyInfo.cs
+G:\REPO WORK\TicketingSystemAPI_NetCore\obj\Debug\net8.0\TicketingSystem.csproj.CoreCompileInputs.cache
+G:\REPO WORK\TicketingSystemAPI_NetCore\obj\Debug\net8.0\TicketingSystem.MvcApplicationPartsAssemblyInfo.cs
+G:\REPO WORK\TicketingSystemAPI_NetCore\obj\Debug\net8.0\TicketingSystem.MvcApplicationPartsAssemblyInfo.cache
+G:\REPO WORK\TicketingSystemAPI_NetCore\obj\Debug\net8.0\TicketingSystem.sourcelink.json

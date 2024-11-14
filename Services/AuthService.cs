@@ -40,7 +40,8 @@ namespace TicketingSystem.Services
             {
                 Username = request.Username,
                 Email = request.Email,
-                PasswordHash = hashedPassword // Store hashed password
+                PasswordHash = hashedPassword, // Store hashed password
+                CreatedAt = DateTime.UtcNow
             };
 
             await _userRepository.CreateAsync(newUser);
