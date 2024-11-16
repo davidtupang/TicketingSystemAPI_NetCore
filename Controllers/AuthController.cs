@@ -44,13 +44,15 @@ namespace TicketingSystem.Controllers
                 return BadRequest(ModelState);
             }
 
+            // Validasi dan hashing dilakukan di service
             var loginResponse = await _authService.Login(request);
             if (loginResponse == null)
             {
                 return Unauthorized(new { message = "Invalid username or password." });
             }
 
-            return Ok(loginResponse);
+            // Pastikan tidak ada data sensitif di response
+            return Ok(new { token = loginResponse.Token, message = "Login successful" });
         }
 
         // Validate token (optional)
